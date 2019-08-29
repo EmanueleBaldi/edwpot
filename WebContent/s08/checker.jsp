@@ -12,7 +12,7 @@
         The user name
         <%
             @SuppressWarnings("unchecked")
-            Set<Character> set = (Set<Character>) request.getAttribute("set");
+            Set<Character> set = (Set<Character>) request.getAttribute("set"); //faccio un cast perchè il treeSet viene letto come un oggetto e voglio che sia un Set<Character>
             if (set == null || set.isEmpty()) {
                 out.print("is empty");
             } else {

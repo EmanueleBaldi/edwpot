@@ -18,14 +18,14 @@ public class Checker extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("user");
+        String user = request.getParameter("user"); //quello che mi arriva dall'utente è un parametro (è il name dell'input e con get parameter vado a prendere il contenuto) 
         Set<Character> set = new TreeSet<>();
         if (user != null) {
             for (char c : user.toCharArray()) {
                 set.add(Character.toLowerCase(c));
             }
         }
-        request.setAttribute("set", set);
+        request.setAttribute("set", set); //quelli che gestisco io sono attributi
 
         RequestDispatcher rd = request.getRequestDispatcher("/s08/checker.jsp");
         rd.forward(request, response);
