@@ -1,3 +1,10 @@
+<!-- jsp è un documento contenente una pagina html e scriptlet(=pezzo del documento contenente codice java), in questo tipo di file
+la servlet viene impostata automaticamente da tomcat per cui non sarà necessaria la creazione del file java ma sarà sufficiente 
+inserire la parte di "finale" della servlet nella scriptlet
+-->
+
+
+
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.util.*"%>
 <!DOCTYPE html>

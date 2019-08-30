@@ -8,18 +8,18 @@
     <script src=".\js\jquery-3.4.1.min.js"></script>
  -->
 <script type="text/javascript">
-    $(function() {
-        $('#btnPlain').click(function() {
-            $.ajax({
-                url : "s07.txt",
-                success : function(data) {
+    $(function() { <!--funzione dell'evento ready che si genere quando il browser ha trasformato il file html nel dom --->
+			$('#btnPlain').click(function() { <!--$('#btnPlain') è un selector -->
+            $.ajax({		<!--ad ajax come parametri gli passiamo un oggetto formato da componenti chiave-valore --->
+                url : "s07.txt", <!-- l'indirizzo della risorsa (può essere anche una servlet) della quale io mi voglio fare il get --->
+                success : function(data) { <!--è ciò che voglio fare in caso di 200__data è un nome qualsiasi e contiene la response, se nell'url ho una servlet, data sarà l'elemento writer nel try (vedi TimerPlain.java)---> 
                     $('#targetPlain').text(data);
                 }
             })
         })
 
-        $('#btnLoad').click(function() {
-            $('#targetLoad').load('s07.txt');
+        $('#btnLoad').click(function() { 
+            $('#targetLoad').load('s07.txt'); <!--la load viene usata quando la risorsa è text --->
         });
 
         $('#btnLoadSrv').click(function() {
@@ -28,7 +28,15 @@
 
         $('#btnGetSrv').click(function() {
             $.get('/edwpot/s07/timerPlain', function(data) {
-                $('#targetGetSrv').val(data);
+                $('#targetGetSrv').val(data); <!-- val serve per gestire valori in input-->
+            
+                
+                <!--   per passare dei parametri, che è fondamentale nella post, possiamo fare $.get('/edwpot/s07/timerPlain', {user=}, function.... oppure nella get /edwpot/s07/timerPlain?user=1
+                $('#btnGetSrv').click(function() {
+                    $.get('/edwpot/s07/timerPlain', function(data) {
+                        $('#targetGetSrv').val(data);      
+                
+                -->
             });
         });
     });
