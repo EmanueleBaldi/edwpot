@@ -2,7 +2,10 @@ package VinylShop;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.Duration;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,23 +13,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/VinylShop/vinylshop")
+@WebServlet("/VinylShop/VinylShop")
 public class VinylShop extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String login = (String) session.getAttribute("login");
+		List <Integer> vinile = (List<Integer>) session.getAttribute("vinile");
 		
-		if (login == null) {
+		if (vinile == null) {
 			
-			String vinile = request.getParameter("vinyls");
-			 session.setAttribute("vinile", vinile);
+			
 	            } else {
-			System.out.println("sticazzi");
+	            	String vinyls = request.getParameter("vinyls");
+	            	String quantita = request.getParameter("quantity");
 	            }
-/*	
+	
 		if (request.getParameter("logout") != null) {
 			session.invalidate();
 			
@@ -41,8 +44,10 @@ public class VinylShop extends HttpServlet {
                 writer.println("</body></html>");
 		}
 		} else {
-			
+				Duration duration = null;
+	        	request.setAttribute("duration", duration ); 
+	        	RequestDispatcher rd = request.getRequestDispatcher("/VinylShop/VinylShop");
+	        	rd.forward(request, response);
 		}
-		*/
 	}
 }

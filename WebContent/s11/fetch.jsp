@@ -14,13 +14,15 @@
         <!-- calling toString() implicitly -->
         <span>User is <%=request.getAttribute("user")%></span>
     </div>
+<%--
     <div>
+
         <%
             User usr = (User) request.getAttribute("user");
         %>
         User is <span><%=usr.getName()%>, <%=usr.getId()%></span>
     </div>
-
+--%>
     <!-- JavaBean accessed through standard action -->
     <jsp:useBean id="user" class="dd.User" scope="request">
         <jsp:setProperty name="user" property="name" value="Bob" />
