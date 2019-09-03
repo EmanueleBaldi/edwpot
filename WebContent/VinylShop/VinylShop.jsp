@@ -10,7 +10,7 @@
 	<h1>Band</h1>
 <form action="/edwpot/VinylShop/VinylShop" method="get">
 
-		Elenco vinili a disposizioni:
+		Elenco vinili a disposizione:
 		<select name="vinyls">
 			<option value="vinyl1">Vinyl1</option>
 			<option value="vinyl2">Vinyl2</option>
