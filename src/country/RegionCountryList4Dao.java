@@ -20,7 +20,7 @@ public class RegionCountryList4Dao extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	Integer value = (Integer.parseInt(request.getParameter("region"))) ;
+    	Integer value = (Integer.parseInt(request.getParameter("region")));
         DaoRegionCountry dao = new DaoRegionCountry(ds);
         request.setAttribute("countries", dao.getQuery(value));
         request.getRequestDispatcher("/country/regionCountry.jsp").forward(request, response);
